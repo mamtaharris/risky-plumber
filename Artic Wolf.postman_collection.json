@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "ab8f6158-d6ce-4820-8e05-57b75f71caf7",
+		"name": "Artic Wolf",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28417302"
+	},
+	"item": [
+		{
+			"name": "Get All Risks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/risks?limit=-1&offset=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"risks"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "-1"
+						},
+						{
+							"key": "offset",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Risks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/risks?limit=1&offset=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"risks"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 20 Oct 2024 16:54:40 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "148"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"a1007cd6-c76e-4a4f-b169-3ef02fa36783\",\n        \"state\": \"open\",\n        \"title\": \"qwerty\",\n        \"description\": \"wert\",\n        \"created_at\": 1729443259,\n        \"updated_at\": 1729443259\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Risk By UUID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/risks/1234567",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"risks",
+						"1234567"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Risk By UUID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/risks/5283dae9-79a0-4170-a8bf-2fa64563c017",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"risks",
+								"5283dae9-79a0-4170-a8bf-2fa64563c017"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 20 Oct 2024 16:58:05 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"5283dae9-79a0-4170-a8bf-2fa64563c017\",\n    \"state\": \"open\",\n    \"title\": \"qwerty\",\n    \"description\": \"wert\",\n    \"created_at\": 1729443260,\n    \"updated_at\": 1729443260\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Risk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"opepn\",\n    \"title\": \"qwerty\",\n    \"description\": \"wert\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/risks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"risks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Risk",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"state\": \"open\",\n    \"title\": \"qwerty\",\n    \"description\": \"wert\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/risks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"risks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 20 Oct 2024 16:54:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"09903f5f-9ad1-4a4f-9af4-dd17004a341a\",\n    \"state\": \"open\",\n    \"title\": \"qwerty\",\n    \"description\": \"wert\",\n    \"created_at\": 1729443260,\n    \"updated_at\": 1729443260\n}"
+				}
+			]
+		}
+	]
+}
